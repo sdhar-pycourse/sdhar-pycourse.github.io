@@ -8,7 +8,7 @@ Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://j
 
 Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
 
-[Introduction](https://github.com/sdhar-pycourse/sdhar-pycourse.github.io/blob/main/Ch1.%20Introduction.html)
+[Introduction](https://github.com/sdhar-pycourse/sdhar-pycourse.github.io/Ch1.Introduction.html)
 
 ```markdown
 Syntax highlighted code block
