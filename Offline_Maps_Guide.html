@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Offline Maps — Reno · Yosemite · Lake Tahoe</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: #f5f5f0; color: #1a1a18; padding: 24px 16px; max-width: 640px; margin: 0 auto; }
+  h1 { font-size: 20px; font-weight: 600; margin-bottom: 4px; }
+  .subtitle { font-size: 14px; color: #666; margin-bottom: 24px; }
+  .section-label { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: #888; margin-bottom: 10px; }
+  .how-to { background: #fff; border-radius: 12px; border: 1px solid #e0e0d8; padding: 16px 18px; margin-bottom: 24px; }
+  .how-to ol { padding-left: 20px; }
+  .how-to li { font-size: 14px; line-height: 1.7; color: #333; }
+  .how-to li strong { color: #1a1a18; }
+  .card { background: #fff; border-radius: 12px; border: 1px solid #e0e0d8; padding: 14px 16px; margin-bottom: 10px; display: flex; align-items: center; gap: 14px; text-decoration: none; color: inherit; transition: border-color 0.15s, background 0.15s; }
+  .card:hover { border-color: #4285f4; background: #f0f6ff; }
+  .card.done { opacity: 0.5; }
+  .card-icon { font-size: 28px; flex-shrink: 0; width: 44px; text-align: center; }
+  .card-body { flex: 1; }
+  .card-title { font-size: 15px; font-weight: 600; margin-bottom: 2px; }
+  .card-days { font-size: 12px; color: #888; margin-bottom: 4px; }
+  .card-coverage { font-size: 13px; color: #555; line-height: 1.4; }
+  .card-arrow { font-size: 20px; color: #4285f4; flex-shrink: 0; }
+  .tip { background: #fff8e1; border: 1px solid #ffe082; border-radius: 10px; padding: 12px 14px; font-size: 13px; color: #7a5800; margin-top: 16px; line-height: 1.5; }
+  .tip strong { color: #5a3e00; }
+  .progress { font-size: 13px; color: #888; margin-top: 12px; text-align: center; }
+  .check-box { width: 20px; height: 20px; border-radius: 50%; border: 2px solid #ccc; flex-shrink: 0; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 13px; }
+  .check-box.checked { background: #34a853; border-color: #34a853; color: #fff; }
+  h2 { font-size: 14px; font-weight: 600; margin-bottom: 10px; }
+  .alt-section { background: #fff; border-radius: 12px; border: 1px solid #e0e0d8; padding: 16px 18px; margin-bottom: 24px; }
+  .search-row { display: flex; align-items: center; gap: 10px; padding: 6px 0; border-bottom: 1px solid #f0f0ec; }
+  .search-row:last-child { border-bottom: none; }
+  .search-num { background: #e8f0fe; color: #1a73e8; border-radius: 50%; width: 22px; height: 22px; font-size: 12px; font-weight: 600; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .search-term { font-size: 13px; font-family: monospace; background: #f5f5f0; padding: 3px 8px; border-radius: 4px; color: #1a1a18; }
+  .search-desc { font-size: 12px; color: #888; }
+</style>
+</head>
+<body>
+
+<h1>📴 Offline Maps Download Guide</h1>
+<p class="subtitle">Reno · Yosemite · Lake Tahoe &nbsp;|&nbsp; July 12–19, 2026</p>
+
+<p class="section-label">How to download (both phones — do separately)</p>
+<div class="how-to">
+  <ol>
+    <li>Open <strong>Google Maps</strong></li>
+    <li>Tap your <strong>profile photo</strong> (top right)</li>
+    <li>Tap <strong>Offline maps</strong></li>
+    <li>Tap <strong>Select your own map</strong></li>
+    <li>Tap <strong>one of the links below</strong> — it opens Maps centered on that area</li>
+    <li>Then go back to <strong>Offline maps → Select your own map</strong> and the map will already be showing the right area — tap <strong>Download</strong></li>
+    <li>Repeat for all 5 areas</li>
+  </ol>
+</div>
+
+<p class="section-label">5 areas to download — tap to open Google Maps</p>
+
+<a class="card" href="https://www.google.com/maps/@39.5,-119.85,10z" id="card-0">
+  <div class="card-icon">✈️</div>
+  <div class="card-body">
+    <div class="card-title">Reno / Carson City</div>
+    <div class="card-days">Days 1 &amp; 8 — arrival and departure</div>
+    <div class="card-coverage">Reno airport, I-80, US-395 north of Carson City</div>
+  </div>
+  <div class="check-box" onclick="toggleDone(event,0)"></div>
+</a>
+
+<a class="card" href="https://www.google.com/maps/@38.4,-119.35,9z" id="card-1">
+  <div class="card-icon">🏔️</div>
+  <div class="card-body">
+    <div class="card-title">Eastern Sierra North</div>
+    <div class="card-days">Days 2 &amp; 6 — US-395 corridor</div>
+    <div class="card-coverage">Walker, Bridgeport, Hwy 108 Sonora Pass area — dead signal zone</div>
+  </div>
+  <div class="check-box" onclick="toggleDone(event,1)"></div>
+</a>
+
+<a class="card" href="https://www.google.com/maps/@37.95,-119.1,10z" id="card-2">
+  <div class="card-icon">🌊</div>
+  <div class="card-body">
+    <div class="card-title">Mono Lake / Lee Vining</div>
+    <div class="card-days">Days 2 &amp; 6 — Tioga Pass approach</div>
+    <div class="card-coverage">Mono Lake, Lee Vining, Hwy 120 east of Tioga Pass</div>
+  </div>
+  <div class="check-box" onclick="toggleDone(event,2)"></div>
+</a>
+
+<a class="card" href="https://www.google.com/maps/@37.72,-119.6,10z" id="card-3">
+  <div class="card-icon">🌲</div>
+  <div class="card-body">
+    <div class="card-title">Yosemite + Oakhurst</div>
+    <div class="card-days">Days 2–5 — park and hotel</div>
+    <div class="card-coverage">Yosemite Valley, Curry Village, Hwy 41 to Oakhurst, Tioga Road</div>
+  </div>
+  <div class="check-box" onclick="toggleDone(event,3)"></div>
+</a>
+
+<a class="card" href="https://www.google.com/maps/@38.94,-120.05,11z" id="card-4">
+  <div class="card-icon">🏖️</div>
+  <div class="card-body">
+    <div class="card-title">South Lake Tahoe / Emerald Bay</div>
+    <div class="card-days">Days 6 &amp; 7 — Tahoe stay</div>
+    <div class="card-coverage">South Lake Tahoe, Emerald Bay, Fallen Leaf Lake, Hwy 50 &amp; 89</div>
+  </div>
+  <div class="check-box" onclick="toggleDone(event,4)"></div>
+</a>
+
+<p class="progress" id="progress-text">0 of 5 downloaded</p>
+
+<div class="tip">
+  <strong>⚡ Do this at home on Wi-Fi before July 12.</strong><br>
+  Each area is 200–600 MB — all 5 together roughly 2 GB. Offline maps expire after 30 days, but you can renew within the app. Both phones need their own downloads — maps don't sync between devices.
+</div>
+
+<br>
+<p class="section-label">Alternative — search these names in Google Maps</p>
+<div class="alt-section">
+  <h2>If links don't open the app, search these in Google Maps instead:</h2>
+  <div class="search-row">
+    <div class="search-num">1</div>
+    <span class="search-term">Reno, Nevada</span>
+    <span class="search-desc">covers airport + Carson City</span>
+  </div>
+  <div class="search-row">
+    <div class="search-num">2</div>
+    <span class="search-term">Bridgeport, California</span>
+    <span class="search-desc">US-395 North section</span>
+  </div>
+  <div class="search-row">
+    <div class="search-num">3</div>
+    <span class="search-term">Lee Vining, California</span>
+    <span class="search-desc">Mono Lake + Tioga Pass</span>
+  </div>
+  <div class="search-row">
+    <div class="search-num">4</div>
+    <span class="search-term">Yosemite National Park</span>
+    <span class="search-desc">full park + Hwy 41 to Oakhurst</span>
+  </div>
+  <div class="search-row">
+    <div class="search-num">5</div>
+    <span class="search-term">South Lake Tahoe, California</span>
+    <span class="search-desc">SLT + Emerald Bay</span>
+  </div>
+</div>
+
+<script>
+  var done = [false, false, false, false, false];
+  function toggleDone(e, i) {
+    e.preventDefault();
+    e.stopPropagation();
+    done[i] = !done[i];
+    var card = document.getElementById('card-' + i);
+    var box = card.querySelector('.check-box');
+    if (done[i]) {
+      card.classList.add('done');
+      box.classList.add('checked');
+      box.textContent = '✓';
+    } else {
+      card.classList.remove('done');
+      box.classList.remove('checked');
+      box.textContent = '';
+    }
+    var count = done.filter(Boolean).length;
+    document.getElementById('progress-text').textContent = count + ' of 5 downloaded';
+  }
+</script>
+
+</body>
+</html>
